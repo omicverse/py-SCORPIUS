@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyscorpius"
+version = "0.1.0"
+description = "Pure-Python port of SCORPIUS — linear-trajectory inference for single-cell RNA-seq via MDS + principal curves."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Zehua Zeng", email = "starlitnightly@163.com" }]
+keywords = ["single-cell", "scRNA-seq", "trajectory", "pseudotime", "scorpius"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+    "numpy>=1.23",
+    "scipy>=1.10",
+    "pandas>=1.5",
+    "scikit-learn>=1.2",
+    "tqdm",
+]
+
+[project.optional-dependencies]
+modules = ["pymclustR>=0.2.0"]   # for extract_modules
+dev = ["pytest>=7", "pytest-cov"]
+
+[project.urls]
+Homepage = "https://github.com/omicverse/py-SCORPIUS"
+Repository = "https://github.com/omicverse/py-SCORPIUS"
+"Upstream R package" = "https://github.com/rcannood/SCORPIUS"
+
+[tool.setuptools.packages.find]
+include = ["pyscorpius*"]
+exclude = ["tests*", "examples*", "SCORPIUS-ref*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::FutureWarning",
+    "ignore::RuntimeWarning",
+]
