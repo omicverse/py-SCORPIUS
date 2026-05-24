@@ -13,12 +13,13 @@ Reusable upstream: py-mclustR ≥ 0.2.0 for `extract_modules`.
 
 from __future__ import annotations
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 from .dim_reduction import reduce_dimensionality
 from .trajectory import infer_trajectory, principal_curve
 from .modules import extract_modules
 from .importance import gene_importances
+from .plotting import draw_trajectory_plot, draw_trajectory_heatmap
 
 __all__ = [
     "reduce_dimensionality",
@@ -26,5 +27,7 @@ __all__ = [
     "principal_curve",
     "extract_modules",
     "gene_importances",
+    "draw_trajectory_plot",
+    "draw_trajectory_heatmap",
     "__version__",
 ]

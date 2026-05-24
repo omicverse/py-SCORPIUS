@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pyscorpius"
-version = "0.1.0"
+version = "0.2.0"
 description = "Pure-Python port of SCORPIUS — linear-trajectory inference for single-cell RNA-seq via MDS + principal curves."
 readme = "README.md"
 requires-python = ">=3.9"
@@ -29,6 +29,7 @@ dependencies = [
 
 [project.optional-dependencies]
 modules = ["pymclustR>=0.2.0"]   # for extract_modules
+plot = ["ggplot2-python>=4.0", "pheatmap-python"]   # for draw_trajectory_*
 dev = ["pytest>=7", "pytest-cov"]
 
 [project.urls]
